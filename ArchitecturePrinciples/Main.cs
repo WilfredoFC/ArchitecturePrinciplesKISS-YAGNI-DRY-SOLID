@@ -24,22 +24,7 @@ namespace EjerciciosPrincipios
             Payroll payroll= new Payroll();
             Console.WriteLine($"Sueldo cliente1: {payroll.CalculateSalaryForFullTime(50000):C}\nSueldo cliente2: {payroll.CalculateSalaryForPartTime(500,20):C}");
 
-            Console.WriteLine("\nProbando clase ProducService");
-            ProductService productService = new ProductService();
-            productService.AddProduct("Iphone 14 Pro",26000);
-            productService.DeleteProduct(1);
 
-            Console.WriteLine("\nProbando clase EmailService");
-            EmailService emailService = new EmailService();
-            emailService.SendEmail("wfelizcaba7@gmai.com", "Hola WIlfredo");
-
-            Console.WriteLine("\nProbando clase SMSService");
-            SMSService SMSService = new SMSService();
-            SMSService.SendSMS("809-888-7777", "Hola Wilfredo");
-
-            Console.WriteLine("\nProbando clase NotificationService");
-            NotificationService notificationService = new NotificationService();
-            notificationService.LogNotification("Hola Wilfredo");
 
         }
 
