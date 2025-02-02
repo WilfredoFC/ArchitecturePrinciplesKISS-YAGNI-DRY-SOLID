@@ -23,9 +23,27 @@ namespace KISS
                 precio= decimal.Parse(Console.ReadLine()!);
                 ListPrecios.AddLast(precio);
             }
+
             decimal[] precios = ListPrecios.ToArray();
-            decimal total = restaurantBill.CalculateTotal(precios);
+            int eleccion = -1;
+            decimal propina;
+            decimal total = 0;
+        
+            Console.WriteLine("Quieres dejar una propina?\n1-Si\n2- Usar propina por defecto(10%)");
+            eleccion = int.Parse(Console.ReadLine()!);
+            if (eleccion == 1)
+            {
+                Console.WriteLine("Que porcentaje de la cuenta quieres dejar de propina?");
+                propina = decimal.Parse(Console.ReadLine()!);
+                total = restaurantBill.CalculateTotal(precios, propina);
+            }
+            else
+            {
+                Console.WriteLine("Se aplicara la propina por defecto");
+                total = restaurantBill.CalculateTotal(precios);
+            }
             Console.WriteLine($"El monto total a pagar es de {total} ");
+            
 
             
         }
